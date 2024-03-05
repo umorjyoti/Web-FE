@@ -1,0 +1,109 @@
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.sign-up-container .content-container {
+  width: 90%;
+  margin: auto;
+  max-width: 500px;
+}
+.sign-up-container .sign-up-header {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39px;
+  text-align: left;
+  color: #5669ff;
+}
+.sign-up-container .sign-up-desc {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+  margin-top: 8px;
+  opacity: 0.7;
+}
+.sign-up-container .phone-number-textbox {
+  margin-top: 20px;
+}
+.sign-up-container .title {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+.sign-up-container .phone-no-input {
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid #d8dadc;
+  gap: 10px;
+  padding: 16px 18px;
+  margin-top: 4px;
+  width: 100%;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.sign-up-container .check-mark {
+  margin-top: 24px;
+  display: flex;
+  gap: 10px;
+}
+.sign-up-container .check-mark-img {
+  object-fit: contain;
+  padding: 3px;
+  height: 18px;
+  width: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.sign-up-container .active {
+  background-color: #000;
+}
+.sign-up-container .submit-btn {
+  padding: 8px 106px;
+  border-radius: 10px;
+  background-color: #5669ff;
+  display: flex;
+  border: none;
+  margin: auto;
+  margin-top: 24px;
+  position: relative;
+}
+.sign-up-container .btn-title {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+}
+.submit-btn .btn-img {
+  height: 16px;
+  width: 16px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: #3d56f0;
+  padding: 4px;
+  position: absolute;
+  right: 10px;
+}

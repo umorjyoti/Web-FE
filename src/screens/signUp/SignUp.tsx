@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import "./index.css";
 import checkMark from "../../assets/images/svg/check-mark-white.svg";
-import continueBtn from "../../assets/images/svg/continue-btn-arrow.svg";
+import SubmitButton from "../../components/buttons/submitButton";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [phoneNo, setPhoneNo] = useState("");
   const [checked, setChecked] = useState(false);
+
+  const navigate = useNavigate();
+
+  const onClickLogin = () => {};
+
+  const onClickContinue = () => {
+    navigate("/otp_verification");
+  };
 
   return (
     <div className="sign-up-container">
@@ -19,8 +28,14 @@ const SignUp = () => {
           <div className="title">Phone No</div>
           <input
             className="phone-no-input"
-            type="text"
+            type="tel"
+            inputMode="tel"
             placeholder="10 digit mobile number"
+            value={phoneNo}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
+            onChange={(e) => setPhoneNo(e?.target?.value)}
+            max={10}
           />
           <div className="check-mark">
             <img
@@ -33,10 +48,10 @@ const SignUp = () => {
               I accept the terms and privacy policy
             </div>
           </div>
-          <button disabled={false} className="submit-btn">
-            <div className="btn-title">Continue</div>
-            <img alt="btn-icon" src={continueBtn} className="btn-img" />
-          </button>
+          <SubmitButton buttonTitle={"Continue"} onClick={onClickContinue} />
+          <div className="login-text">
+            Already have an account? <span onClick={onClickLogin}>Log in</span>
+          </div>
         </div>
       </div>
     </div>

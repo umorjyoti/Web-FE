@@ -1,0 +1,33 @@
+.submit-btn {
+  padding: 8px 106px;
+  border-radius: 10px;
+  background-color: #5669ff;
+  display: flex;
+  border: none;
+  margin: auto;
+  margin-top: 24px;
+  position: relative;
+  cursor: pointer;
+}
+.submit-btn .btn-title {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+}
+.submit-btn .btn-img {
+  height: 16px;
+  width: 16px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: #3d56f0;
+  padding: 4px;
+  position: absolute;
+  right: 10px;
+}

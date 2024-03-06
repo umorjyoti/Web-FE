@@ -1,11 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import SignUp from "./screens/signUp/SignUp";
+import Navigation from "./navigation";
 
 function App() {
   return (
-    <>
-      <SignUp />
-    </>
+    <BrowserRouter>
+      <Navigation />
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import checkMark from "../../assets/images/svg/check-mark-white.svg";
 import SubmitButton from "../../components/buttons/submitButton";

@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./index.css";
 import Header from "../../components/header";
+import SubmitButton from "../../components/buttons/submitButton";
 
 const OTPVerification = () => {
   const [otp, setOtp] = useState(new Array(5).fill(""));
+  const [showVerify, setShowVerify] = useState(false);
+
+  useEffect(() => {
+    if (otp?.join("")?.length === 5) setShowVerify(true);
+  }, [otp]);
 
   const handleChange = (element, index) => {
     if (isNaN(element?.value)) return false;
@@ -36,8 +43,20 @@ const OTPVerification = () => {
                 onFocus={(e) => e.target.select()}
               />
             );
-          })}{" "}
+          })}
         </div>
+        {showVerify ? (
+          <div>
+            <SubmitButton buttonTitle={"Verify"} onClick={() => {}} />
+            <div className="sub-header-text">
+              I didn’t receive a code <span>Resend</span>
+            </div>
+          </div>
+        ) : (
+          <div onClick={() => {}} className="send-code">
+            Send Code again <span>{`  00:${"20"}`}</span>
+          </div>
+        )}
       </div>
     </div>
   );

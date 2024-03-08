@@ -18,3 +18,39 @@
   height: 46px;
   width: 46px;
 }
+
+/* Add Property */
+.header-container-add-property {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  height: 32px;
+  position: relative;
+}
+.header-container-add-property .back-icon {
+  height: 32px;
+  width: 32px;
+  padding: 7px;
+  border: 1px solid #d8dadc;
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+}
+.header-container-add-property .align-back-icon {
+  align-self: flex-start;
+}
+.header-container-add-property .page-title {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  align-self: center;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}

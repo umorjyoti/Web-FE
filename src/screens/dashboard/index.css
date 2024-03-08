@@ -1,0 +1,28 @@
+.dashoard-main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 100px;
+  height: 100vh;
+}
+.dashoard-main-container h1 {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .add-prop-modal .ant-modal-title {
+    text-align: center !important;
+    font-family: "Inter";
+  }
+  .ant-modal-root .ant-modal-centered .add-prop-modal {
+    vertical-align: bottom;
+    padding-bottom: -5px;
+    margin: 0px;
+    max-width: 100vw;
+  }
+  .add-prop-modal .ant-modal-content {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}

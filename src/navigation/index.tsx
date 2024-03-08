@@ -5,7 +5,7 @@ import UnauthorizedLayout from "./UnAuthorizedLayout";
 
 const Navigation = () => {
   const userJWT = getUserJWT();
-  return <>{userJWT ? <PrivateLayout /> : <UnauthorizedLayout />}</>;
+  return <>{!userJWT ? <PrivateLayout /> : <UnauthorizedLayout />}</>;
 };
 
 export default Navigation;

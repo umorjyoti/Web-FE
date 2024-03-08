@@ -1,0 +1,165 @@
+.property-details-container {
+  width: 90%;
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+.property-details-header {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.013em;
+  text-align: left;
+  margin-top: 24px;
+}
+.floors-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.property-details-container .sub-title {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.property-details-container .space-top {
+  margin-top: 8px;
+}
+.property-details-container .adding-floor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.property-details-container .substract-floor {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.property-details-container .add-floor {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.property-details-container .floor-input {
+  border: none;
+  width: 60px;
+  height: 30px;
+  padding: 10px;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.013em;
+  text-align: center;
+}
+.property-details-container .room-type-container {
+  border: 2px solid #cad0fa;
+  background-color: #5669ff33;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  margin-top: 14px;
+  border-radius: 16px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 10px;
+}
+.property-details-container .room-type-container::-webkit-scrollbar {
+  display: none;
+}
+.property-details-container .add-btn-img-container {
+  height: 41px;
+  width: 41px;
+  border-radius: 41px;
+  padding: 5px;
+  background-color: #5669ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.property-details-container .add-button-img {
+  color: #fff;
+}
+.property-details-container .add-button-text {
+  font-family: "Inter";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.property-details-container .add-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.property-details-container .ammenity-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+.btn-submit-fixed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  padding-bottom: 24px;
+  position: fixed;
+  bottom: 0;
+  width: 100% !important;
+  background-color: #fff;
+  -webkit-box-shadow: 0px -9px 45px -19px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 0px -9px 45px -19px rgba(0, 0, 0, 0.44);
+  box-shadow: 0px -9px 45px -19px rgba(0, 0, 0, 0.44);
+}
+
+/* Add Room Type */
+.empty-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.empty-div .empty-img {
+  width: 155.92px;
+  height: 169.21px;
+}
+.empty-div .empty-title {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0px;
+  text-align: center;
+}

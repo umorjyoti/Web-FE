@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import Header from "../../components/header";
 import SubmitButton from "../../components/buttons/submitButton";
+import { getUserJWT, saveUserJWT } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
 const OTPVerification = () => {
   const [otp, setOtp] = useState(new Array(5).fill(""));
   const [showVerify, setShowVerify] = useState(false);
+  const userJWT = getUserJWT();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (otp?.join("")?.length === 5) setShowVerify(true);
@@ -47,7 +51,15 @@ const OTPVerification = () => {
         </div>
         {showVerify ? (
           <div>
-            <SubmitButton buttonTitle={"Verify"} onClick={() => {}} />
+            <SubmitButton
+              buttonTitle={"Verify"}
+              onClick={async () => {
+                await saveUserJWT("askfjaiskfbhasias98323wefjskd");
+                setTimeout(() => {
+                  navigate("/dashboard");
+                }, 1000);
+              }}
+            />
             <div className="sub-header-text">
               I didn’t receive a code <span>Resend</span>
             </div>

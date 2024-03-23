@@ -163,3 +163,63 @@
   letter-spacing: 0px;
   text-align: center;
 }
+
+/* Floor Detials  */
+.floor-details-container {
+  width: 90%;
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  position: relative;
+  height: 100vh;
+}
+.floors-container {
+  height: 40px;
+  width: 100%;
+  margin: auto;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-box-shadow: 1px 7px 5px 0px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 1px 7px 5px 0px rgba(0, 0, 0, 0.31);
+  box-shadow: 1px 7px 5px 0px rgba(0, 0, 0, 0.31);
+}
+
+.floors-container::-webkit-scrollbar {
+  display: none;
+}
+
+.floors-container .floor-card {
+  height: 40px;
+  padding: 0px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+  font-family: "Inter";
+  font-size: 14px;
+}
+.floors-container .floor-card-active {
+  border-bottom: 4px solid #5669ff;
+}
+.add-btn {
+  height: 41px;
+  width: 41px;
+  bottom: 100px;
+  right: 20px;
+  cursor: pointer;
+  background-color: #5669ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 41px;
+  position: absolute;
+}
+.add-btn .plus-icon {
+  color: #fff;
+  font-size: 23px;
+}

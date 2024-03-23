@@ -44,10 +44,14 @@ const AddPropertyDetails = () => {
     "Front-Garden",
   ];
 
-  const onClickAddRoomType = () => {
+  const onClickSavePropertyDetails = () => {
     console.log("navigate");
     navigate("add_room_type");
   };
+
+  // const onClickSavePropertyDetails = () => {
+  //   navigate("add_rooms_to_floor");
+  // };
 
   return (
     <>
@@ -80,7 +84,7 @@ const AddPropertyDetails = () => {
             </div>
           </div>
         </div>
-        <div className="select-room-type">
+        {/* <div className="select-room-type">
           <div className="property-details-header">Select Room Type</div>
           <div className="room-type-container">
             <div onClick={onClickAddRoomType} className="add-button">
@@ -91,7 +95,7 @@ const AddPropertyDetails = () => {
               <div className="add-button-text">Add Room</div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="common-ammenities">
           <div className="property-details-header">Common Ammenities</div>
           {ammenities?.map((item) => (
@@ -103,7 +107,7 @@ const AddPropertyDetails = () => {
         </div>
       </div>
       <div className="btn-submit-fixed">
-        <SubmitButton onClick={() => {}} buttonTitle="Save" />
+        <SubmitButton onClick={onClickSavePropertyDetails} buttonTitle="Save" />
       </div>
     </>
   );

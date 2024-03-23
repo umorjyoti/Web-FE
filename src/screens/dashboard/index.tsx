@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./index.css";
 import SubmitButton from "../../components/buttons/submitButton";
 import { useNavigate } from "react-router-dom";
+import AddPropertyHeader from "../../components/header/AddPropertyHeader";
 
 const MyFormItemContext = React.createContext<(string | number)[]>([]);
 
@@ -56,51 +57,54 @@ const Dashboard = () => {
   };
 
   const onClickAddPropertyBtn = () => {
-    navigate("/add_property_details");
+    navigate("add_property_details");
   };
 
   return (
-    <div className="dashoard-main-container">
-      <h1>DashBoard</h1>
-      <button onClick={onClickAddProperty}>Add New Property</button>
-      <Modal
-        title="Add New Property"
-        open={showAddPropertyModel}
-        onCancel={onClickCloseAddPropertyModal}
-        centered={true}
-        footer={false}
-        className="add-prop-modal"
-      >
-        <Form name="form_item_path" layout="vertical" onFinish={onFinish}>
-          <MyFormItemGroup prefix={["user"]}>
-            <MyFormItem name="property_name" label="Property/Company Name">
-              <Input placeholder="Property Name" />
-            </MyFormItem>
-            <MyFormItem name="property_manager" label="Property Manager">
-              <Input placeholder="Property Manager's phone number" />
-            </MyFormItem>
-            <MyFormItem name="manager_phone" label="Manager's Phone No">
-              <Input placeholder="Manager's phone no" />
-            </MyFormItem>
-            <MyFormItem name="property_type" label="Property Type">
-              <Select placeholder="Select Room Type">
-                <Option value="Room">Room</Option>
-                <Option value="PG">PG</Option>
-                <Option value="Flat">Flat</Option>
-                <Option value="Stand Alone">Stand Alone</Option>
-                <Option value="Hostel">Hostel</Option>
-                <Option value="Hotel">Hotel</Option>
-              </Select>
-            </MyFormItem>
-          </MyFormItemGroup>
+    <>
+      <AddPropertyHeader title={"Sai Omes"} />
+      <div className="dashoard-main-container">
+        <div className="financial-data-container"></div>
+        <button onClick={onClickAddProperty}>Add New Property</button>
+        <Modal
+          title="Add New Property"
+          open={showAddPropertyModel}
+          onCancel={onClickCloseAddPropertyModal}
+          centered={true}
+          footer={false}
+          className="add-prop-modal"
+        >
+          <Form name="form_item_path" layout="vertical" onFinish={onFinish}>
+            <MyFormItemGroup prefix={["user"]}>
+              <MyFormItem name="property_name" label="Property/Company Name">
+                <Input placeholder="Property Name" />
+              </MyFormItem>
+              <MyFormItem name="property_manager" label="Property Manager">
+                <Input placeholder="Property Manager's phone number" />
+              </MyFormItem>
+              <MyFormItem name="manager_phone" label="Manager's Phone No">
+                <Input placeholder="Manager's phone no" />
+              </MyFormItem>
+              <MyFormItem name="property_type" label="Property Type">
+                <Select placeholder="Select Room Type">
+                  <Option value="Room">Room</Option>
+                  <Option value="PG">PG</Option>
+                  <Option value="Flat">Flat</Option>
+                  <Option value="Stand Alone">Stand Alone</Option>
+                  <Option value="Hostel">Hostel</Option>
+                  <Option value="Hotel">Hotel</Option>
+                </Select>
+              </MyFormItem>
+            </MyFormItemGroup>
 
-          <SubmitButton
-            buttonTitle="Add Property"
-            onClick={onClickAddPropertyBtn}
-          />
-        </Form>
-      </Modal>
-    </div>
+            <SubmitButton
+              buttonTitle="Add Property"
+              onClick={onClickAddPropertyBtn}
+            />
+          </Form>
+        </Modal>
+      </div>
+    </>
   );
 };
 

@@ -6,12 +6,15 @@ const AddPropertyDetails = lazy(
   () => import("../screens/addProperty/AddPropertyDetails")
 );
 const AddRoomType = lazy(() => import("../screens/addProperty/AddRoomType"));
+const AddRoomsToFloor = lazy(
+  () => import("../screens/addProperty/AddRoomsToFloor")
+);
 
 const PrivateLayout = () => {
   return (
     <Routes>
       <Route
-        path=""
+        path="/dashboard"
         element={
           <Suspense fallback={<>Loading...</>}>
             <Dashboard />
@@ -19,7 +22,7 @@ const PrivateLayout = () => {
         }
       />
       <Route
-        path="/add_property_details"
+        path="/dashboard/add_property_details"
         element={
           <Suspense fallback={<>Loading...</>}>
             <AddPropertyDetails />
@@ -27,10 +30,18 @@ const PrivateLayout = () => {
         }
       />
       <Route
-        path="/add_property_details/add_room_type"
+        path="/dashboard/add_property_details/add_room_type"
         element={
           <Suspense fallback={<>Loading...</>}>
             <AddRoomType />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/dashboard/add_property_details/add_room_type/add_rooms_to_floor"
+        element={
+          <Suspense fallback={<>Loading...</>}>
+            <AddRoomsToFloor />
           </Suspense>
         }
       />

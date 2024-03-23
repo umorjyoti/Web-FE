@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { verifyOTP } from "../../redux/actions/login";
 
-const OTPVerification = () => {
+const OTPVerification = (props) => {
+  console.log("props",props)
   const [otp, setOtp] = useState(new Array(5).fill(""));
   const [showVerify, setShowVerify] = useState(false);
   const userJWT = getUserJWT();
@@ -33,6 +34,8 @@ const OTPVerification = () => {
     dispatch(verifyOTP({}))?.unwrap()?.then(data=>{
       if(data?.type==="success"){
         saveUserJWT(data?.data?.token);
+        props?.setJWT(data?.data?.token)
+        
       }
     })
   }

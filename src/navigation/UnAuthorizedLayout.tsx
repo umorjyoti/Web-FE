@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 const SignUp = lazy(() => import("../screens/signUp/SignUp"));
 const OTPVerification = lazy(() => import("../screens/signUp/OPTVerification"));
 
-const UnauthorizedLayout = () => {
+const UnauthorizedLayout = (props:any) => {
   return (
     <Routes>
       <Route
@@ -19,7 +19,7 @@ const UnauthorizedLayout = () => {
         path="/otp_verification"
         element={
           <Suspense fallback={<>Loading...</>}>
-            <OTPVerification />
+            <OTPVerification setJWT={props?.setToken} />
           </Suspense>
         }
       />

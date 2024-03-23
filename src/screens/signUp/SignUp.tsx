@@ -3,23 +3,36 @@ import "./index.css";
 import checkMark from "../../assets/images/svg/check-mark-white.svg";
 import SubmitButton from "../../components/buttons/submitButton";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { postPhoneNo } from "../../redux/actions/login";
+import { savePhoneAndUserID } from "../../redux/reducers/login";
 
 const SignUp = () => {
   const [phoneNo, setPhoneNo] = useState("");
   const [checked, setChecked] = useState(false);
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const onClickLogin = () => {};
 
   const onClickContinue = () => {
-    navigate("/otp_verification");
+    if(!checked) return;
+   dispatch(postPhoneNo(phoneNo))?.unwrap()?.then(data=>{
+    if(data?.type==="success") {
+      dispatch(savePhoneAndUserID({
+        phone:phoneNo,
+        userID:data?.data?.userId,
+      }))
+      navigate("/otp_verification")};
+   })
+    // navigate("/otp_verification");
   };
 
   return (
     <div className="sign-up-container">
       <div className="content-container">
-        <div className="sign-up-header">Sign Up</div>
+        <div className="sign-up-header">LogIn</div>
         <div className="sign-up-desc">
           Please enter your phone number and we’ll send you a SMS verification
           code
@@ -49,9 +62,9 @@ const SignUp = () => {
             </div>
           </div>
           <SubmitButton buttonTitle={"Continue"} onClick={onClickContinue} />
-          <div className="login-text">
+          {/* <div className="login-text">
             Already have an account? <span onClick={onClickLogin}>Log in</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

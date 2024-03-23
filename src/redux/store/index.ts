@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { login_details } from "../reducers/login";
 
 const store = configureStore({
-    reducer:{},
+    reducer:{
+        login_details:login_details
+    },
     middleware:(getDefaultMiddleware)=>getDefaultMiddleware({serializableCheck:false})
 })
 

@@ -4,12 +4,17 @@ import Header from "../../components/header";
 import SubmitButton from "../../components/buttons/submitButton";
 import { getUserJWT, saveUserJWT } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { verifyOTP } from "../../redux/actions/login";
 
 const OTPVerification = () => {
   const [otp, setOtp] = useState(new Array(5).fill(""));
   const [showVerify, setShowVerify] = useState(false);
   const userJWT = getUserJWT();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const data = useSelector((state)=>state);
+  console.log("data",data)
 
   useEffect(() => {
     if (otp?.join("")?.length === 5) setShowVerify(true);
@@ -24,6 +29,10 @@ const OTPVerification = () => {
       element.nextSibling.focus();
     }
   };
+
+  const onClickVerify = ()=>{
+// dispatch(verifyOTP({}))
+  }
 
   return (
     <div className="opt-screen">
@@ -53,12 +62,8 @@ const OTPVerification = () => {
           <div>
             <SubmitButton
               buttonTitle={"Verify"}
-              onClick={async () => {
-                await saveUserJWT("askfjaiskfbhasias98323wefjskd");
-                setTimeout(() => {
-                  navigate("/dashboard");
-                }, 1000);
-              }}
+              onClick={
+              onClickVerify}
             />
             <div className="sub-header-text">
               I didn’t receive a code <span>Resend</span>

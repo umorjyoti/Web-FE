@@ -13,8 +13,8 @@ const OTPVerification = () => {
   const userJWT = getUserJWT();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector((state)=>state);
-  console.log("data",data)
+  const data = useSelector((state) => state);
+  console.log("data", data)
 
   useEffect(() => {
     if (otp?.join("")?.length === 5) setShowVerify(true);
@@ -24,14 +24,17 @@ const OTPVerification = () => {
     if (isNaN(element?.value)) return false;
 
     setOtp([...otp.map((item, idx) => (idx === index ? element.value : item))]);
-
     if (element?.nextSibling) {
       element.nextSibling.focus();
     }
   };
 
-  const onClickVerify = ()=>{
-// dispatch(verifyOTP({}))
+  const onClickVerify = () => {
+    dispatch(verifyOTP({}))?.unwrap()?.then(data=>{
+      if(data?.type==="success"){
+        saveUserJWT(data?.data?.token);
+      }
+    })
   }
 
   return (
@@ -63,14 +66,14 @@ const OTPVerification = () => {
             <SubmitButton
               buttonTitle={"Verify"}
               onClick={
-              onClickVerify}
+                onClickVerify}
             />
             <div className="sub-header-text">
               I didn’t receive a code <span>Resend</span>
             </div>
           </div>
         ) : (
-          <div onClick={() => {}} className="send-code">
+          <div onClick={() => { }} className="send-code">
             Send Code again <span>{`  00:${"20"}`}</span>
           </div>
         )}

@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { login_details } from "../reducers/login";
+import rootReducer from "./rootStore";
 
-const store = configureStore({
-    reducer:{
-        login_details:login_details
-    },
+
+const store :any= configureStore({
+    reducer:rootReducer,
     middleware:(getDefaultMiddleware)=>getDefaultMiddleware({serializableCheck:false})
 })
 
